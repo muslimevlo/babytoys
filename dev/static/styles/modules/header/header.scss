@@ -1,18 +1,12 @@
 .header {
-    background-color: $athens-gray;
-    &__nav {
-        &.header__nav {
-            &--right {
-                margin-left: auto;
-            }
-        }
-    }
+    &__nav {}
     &__top {
-        align-items: center;
-        display: flex;
+        background-color: $athens-gray;
         padding: 10px 0;
     }
+    &-content {}
     &__main {
         padding: 25px 0;
+        display: flex;
     }
 }
