@@ -1,4 +1,5 @@
 .header {
+    border-bottom: 1px solid $athens-gray;
     &__nav {
         &.header__nav {
             &--right {
@@ -60,6 +61,9 @@
         font-size: 12px;
         line-height: 1.67;
     }
+    &__search {
+        margin-left: auto;
+    }
     &-address {
         display: flex;
         flex: 0 0 190px;
@@ -99,6 +103,7 @@
         align-items: center;
         background-color: $wild-sand;
         border-radius: 20px;
+        cursor: pointer;
         display: flex;
         height: 40px;
         padding: 0 20px;
