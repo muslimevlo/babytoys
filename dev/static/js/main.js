@@ -1,7 +1,7 @@
 $(document).ready(function () {
     svg4everybody({});
 
-    let mainSubnavHover = () => {
+    let mainSubnavHover = function() {
         $('.main-subnav__item').hover(
             function () {
                 let parentList = $(this).closest('main-subnav__list');
@@ -20,19 +20,19 @@ $(document).ready(function () {
         )
     };
 
-    let openSearchForm = () => {
+    let openSearchForm = function() {
         $(document).on('click','.search__icon',function () {
             $(this).parent().addClass('search--open');
         });
     };
 
-    let clearSearchForm = () => {
+    let clearSearchForm = function() {
         $(document).on('click','.search__clear',function () {
             $(search__input).val('');
         });
     };
 
-    let bannerSlider =() => {
+    let bannerSlider = function() {
         $('.js-banner').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -46,8 +46,13 @@ $(document).ready(function () {
         })
     };
 
+    let tabs = function () {
+
+    };
+
     mainSubnavHover();
     openSearchForm();
     clearSearchForm();
     bannerSlider();
+    tabs();
 });

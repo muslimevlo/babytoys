@@ -3,3 +3,33 @@
         height: 22px;
     }
 }
+
+.advantages{
+    display: flex;
+    align-items: center;
+    background-color: $parcelain;
+    border-radius: 4px;
+    padding: 20px;
+    justify-content: space-between;
+}
+.advantage{
+    display: flex;
+    align-items: center;
+    &__body{
+        display: flex;
+        flex-direction: column;
+    }
+    &__title{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    &__icon{
+        @include size(50px);
+        fill: $dusty-gray;
+        margin-right: 20px;
+    }
+    &__descr{
+        font-size: 12px;
+        color: $mid-gray;
+    }
+}
