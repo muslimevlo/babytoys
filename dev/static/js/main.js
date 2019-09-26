@@ -60,10 +60,10 @@ $(document).ready(function () {
             slidesToScroll: 1,
             dots: true,
             arrows: false,
-            appendDots: '.product-prev__colors',
+            appendDots: '.product-prev__color',
             customPaging: function (slider, i) {
                 let color = $(slider.$slides[i]).data('color');
-                return '<a class="product-prev__color" style="background-color:' + color + '"></a>'
+                return '<a class="product-prev__color" style="background-color: ' + color +' ></a>'
             }
         })
     };

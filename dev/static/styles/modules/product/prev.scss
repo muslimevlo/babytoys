@@ -59,7 +59,7 @@
             text-decoration: line-through;
         }
     }
-    &__color{
+    &__colors {
         @include size(20px);
         display: block;      
     }
