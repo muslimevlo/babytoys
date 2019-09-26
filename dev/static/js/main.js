@@ -46,17 +46,39 @@ $(document).ready(function () {
         })
     };
 
-    let tabs = function () {};
+    let tabs = function () {
+        $('.tabs-navigation__item').click(function() {
+            let tabName = $(this).attr('show-tab');
+            $(this).addClass('tabs-navigation__item--active').siblings().removeClass('tabs-navigation__item--active');
+            $('.tabs-body .' + tabName).addClass('tab--active').siblings().removeClass('tab--active');
+        });
+    };
 
-    $('.tabs-navigation__item').click(function() {
-        let tabName = $(this).attr('show-tab');
-        $(this).addClass('tabs-navigation__item--active').siblings().removeClass('tabs-navigation__item--active');
-        $('.tabs-body .' + tabName).addClass('tab--active').siblings().removeClass('tab--active');
-    });
+    let productPrevSlider = function () {
+        $('.js-product-prev__slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: false,
+            appendDots: '.product-prev__colors',
+            customPaging: function (slider, i) {
+                let color = $(slider.$slides[i]).data('color');
+                return '<a class="product-prev__color" style="background-color: '+ color +' ></a>'
+            }
+        })
+    };
 
+    let productLineSlider = function () {
+        $('.js-products-line-slider').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1
+        })
+    };
     mainSubnavHover();
     openSearchForm();
     clearSearchForm();
     bannerSlider();
     tabs();
+    productPrevSlider();
+    productLineSlider();
 });
