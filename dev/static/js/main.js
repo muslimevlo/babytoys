@@ -96,30 +96,33 @@ $(document).ready(function () {
     productPrevSlider();
     productLineSlider();
 });
-$(window).on('load', function (){
-    $(".sk-circle").fadeOut();
-    $(".preloader").delay(400).fadeOut("slow");
-    $("body").removeClass("fixed");
-})
-
-// полифилы для IE11
-(function () {
-    if (!Element.prototype.closest) {
-        Element.prototype.closest = function (css) {
-            var node = this;
-            while (node) {
-                if (node.matches(css)) return node;
-                else node = node.parentElement;
-            }
-            return null;
-        };
-    }
-})();
-(function () {
-    if (!Element.prototype.matches) {
-        Element.prototype.matches =  Element.prototype.matchesSelector ||
-        Element.prototype.webkitMatchesSelector ||
-        Element.prototype.mozMatchesSelector ||
-        Element.prototype.msMatchesSelector;
-    }
-})();
+(function(){
+    'use strict';
+      $(window).on('load', function () {
+          if ($(".pre-loader").length > 0)
+          {
+              $(".pre-loader").fadeOut("slow");
+          }
+      });
+  })(jQuery)
+// // полифилы для IE11
+// (function () {
+//     if (!Element.prototype.closest) {
+//         Element.prototype.closest = function (css) {
+//             var node = this;
+//             while (node) {
+//                 if (node.matches(css)) return node;
+//                 else node = node.parentElement;
+//             }
+//             return null;
+//         };
+//     }
+// })();
+// (function () {
+//     if (!Element.prototype.matches) {
+//         Element.prototype.matches =  Element.prototype.matchesSelector ||
+//         Element.prototype.webkitMatchesSelector ||
+//         Element.prototype.mozMatchesSelector ||
+//         Element.prototype.msMatchesSelector;
+//     }
+// })();
