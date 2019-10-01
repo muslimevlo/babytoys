@@ -6,8 +6,8 @@
     height: 300px;
     padding: 0 90px;
     position: relative;
+    overflow: hidden;
     border-radius: 4px;
-
     &__item{
         outline: none;
     }

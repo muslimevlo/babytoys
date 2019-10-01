@@ -48,14 +48,16 @@ $(document).ready(function () {
 
     let tabs = function () {
         $('.tabs-navigation__item').click(function() {
-            let tabName = $(this).attr('show-tab');
+            let tabName = $(this).attr('show-tab'),
+                tabsBody = $(this).closest('.tabs').find('.tabs__body')[0],
+                tab = $(tabsBody).find('.' + tabName);
             $(this).addClass('tabs-navigation__item--active').siblings().removeClass('tabs-navigation__item--active');
-            $('.tabs__body .' + tabName).addClass('tab--active').siblings().removeClass('tab--active');
-            if ('.tabs__body .' + tabName + ' .js-products-line-slider') {
+            $(tab).addClass('tab--active').siblings().removeClass('tab--active');
+            if ($(tabsBody).find('.js-products-line-slider').length) {
                 $('.js-products-line-slider').each(function () {
                     $(this).slick('refresh');
                 });
-                $('.js-products-prev__slider').each(function () {
+                $('.js-product-prev__slider').each(function (){
                     $(this).slick('refresh');
                 });
             }
@@ -94,3 +96,33 @@ $(document).ready(function () {
     productPrevSlider();
     productLineSlider();
 });
+(function(){
+    'use strict';
+      $(window).on('load', function () {
+          if ($(".pre-loader").length > 0)
+          {
+              $(".pre-loader").fadeOut("slow");
+          }
+      });
+  })(jQuery)
+// // полифилы для IE11
+// (function () {
+//     if (!Element.prototype.closest) {
+//         Element.prototype.closest = function (css) {
+//             var node = this;
+//             while (node) {
+//                 if (node.matches(css)) return node;
+//                 else node = node.parentElement;
+//             }
+//             return null;
+//         };
+//     }
+// })();
+// (function () {
+//     if (!Element.prototype.matches) {
+//         Element.prototype.matches =  Element.prototype.matchesSelector ||
+//         Element.prototype.webkitMatchesSelector ||
+//         Element.prototype.mozMatchesSelector ||
+//         Element.prototype.msMatchesSelector;
+//     }
+// })();
