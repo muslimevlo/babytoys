@@ -1,0 +1,8 @@
+.header {
+    &__mobile {
+        display: none;
+        @media screen and (max-width: $tablet-size) {
+            display: block;
+        }
+    }
+}
