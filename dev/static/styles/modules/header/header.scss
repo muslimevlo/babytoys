@@ -1,6 +1,9 @@
 @import "mobile";
 .header {
     border-bottom: 1px solid $athens-gray;
+    @media screen and (max-width: $tablet-size) {
+        border-bottom: 0;
+    }
     &__nav {
         &.header__nav {
             &--right {
@@ -11,6 +14,10 @@
     &__top {
         background-color: $athens-gray;
         padding: 10px 0;
+        @media screen and (max-width: $tablet-size) {
+            display: none;
+        }
+        
     }
     &__content {
         display: flex;
@@ -62,6 +69,18 @@
         font-size: 12px;
         line-height: 1.67;
     }
+    &__item {
+        @media screen and (max-width: $tablet-size) {
+            display: none;
+        }
+        &.header__item {
+            &--mobile{
+                @media screen and (max-width: $tablet-size) {
+                    display: block;
+                }
+            }
+        }
+    }
     &__search {
         margin-top: 20px;
         margin-left: auto;
@@ -75,6 +94,9 @@
         display: flex;
         flex: 0 0 190px;
         width: 190px;
+        @media screen and (max-width: $tablet-size) {
+            display: none;
+        }
         &__icon{
             flex: 0 0 15px;
             fill: $silver-chalice;

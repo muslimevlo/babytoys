@@ -9,9 +9,6 @@
         @include size(20px);
         cursor: pointer;
         fill: $blaze-orange;
-        @media screen and (max-width: $tablet-size) {
-            display: none;
-        }
     }
     &__body{
         padding: 20px;
@@ -22,11 +19,6 @@
         top: -35px;
         display: none;
         width: 550px;
-        @media screen and (max-width: $tablet-size) {
-            display: block;
-            position: static;
-        }
-
     }
     &__form{
         display: flex;

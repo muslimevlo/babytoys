@@ -11,10 +11,20 @@
     border-radius: 4px;
     padding: 20px;
     justify-content: space-between;
+    @media screen and (max-width: $tablet-size) {
+        justify-content: space-between;
+        padding: 20px 40px;
+    }
 }
 .advantage{
     display: flex;
     align-items: center;
+    margin-right: 180px;
+    @media screen and (max-width: $tablet-size) {
+        flex-direction: column;
+        margin-right: 0;
+        text-align: center;
+    }
     &__body{
         display: flex;
         flex-direction: column;
@@ -27,6 +37,10 @@
         @include size(50px);
         fill: $dusty-gray;
         margin-right: 20px;
+        @media screen and (max-width: $tablet-size) {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
     }
     &__descr{
         font-size: 12px;
@@ -75,3 +89,44 @@
         }
     }
 }
+.sandwich {
+    padding-top: 20px;
+    height: 16px;
+    cursor: pointer;
+    position: relative;
+    width: 20px;
+    &__line {
+      background-color: rgba($white,.8);
+      height: 2px;
+      position: absolute;
+      transition: all linear .3s;
+      width: 100%;
+      &.sandwich__line {
+        &--top { bottom: 18px; }
+        &--middle {
+          bottom: 9px;
+          opacity: 1;
+        }
+        &--bottom { bottom: 0; }
+      }
+    }
+    &.is {
+      &-active {
+        .sandwich {
+          &__line {
+            &.sandwich__line {
+              &--top {
+                bottom: 10px;
+                transform: rotate(45deg);
+              }
+              &--middle { opacity: 0; }
+              &--bottom {
+                bottom: 10px;
+                transform: rotate(45deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
