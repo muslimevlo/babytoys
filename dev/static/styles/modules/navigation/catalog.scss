@@ -1,5 +1,4 @@
 .catalog-nav{
-    
     &__list{
         background-color: $white;
         position: relative;
@@ -19,8 +18,7 @@
             & > .catalog-nav__link{
                 background-color: $athens-gray;
                 color: $blaze-orange;
-            }
-                
+            }                
             .catalog-nav__icon {
                 stroke: $blaze-orange;
             }
@@ -34,14 +32,12 @@
         color: $mine-shaft;
         display: flex;
         line-height: 20px;
-        padding: 10px;
+        padding: 10px 15px;
         
     }
     &__icon{
+        @include size(12px);
         margin-left: auto;
-        height: 12px;
         stroke: $silver;
-        width: 8px;
-        // float: right;
     }
 }
