@@ -64,15 +64,35 @@ $(document).ready(function () {
         });
     };
 
+    // let productPrevSlider = function() {
+    //     $('.js-product-prev__slider').each(function (idx) {
+    //         let carouselId = "carousel" + idx;
+    //         this.closest('.product-prev').id = carouselId;
+    //         $(this).slick({
+    //         slidesToShow: 1,
+    //         slidesToScroll: 1,
+    //         dots: true,
+    //         appendDots: '#' + carouselId + ' .product-prev__colors',
+    //         arrows: false,
+    //         customPaging: function(slider,i){
+    //             let color = $(slider.$slides[i]).data('color');
+    //             return '<a class="product-prev__color" style="background-color:' + color + ';"></a>'
+    //         }
+    //     });
+    //     });
+    // };
+
     let productPrevSlider = function() {
         $('.js-product-prev__slider').each(function (idx) {
-            let carouselId = "carousel" + idx;
-            this.closest('.product-prev').id = carouselId;
+            let productPrevSliderClass = "products-line-slider-" + idx;
+            this.closest('.product-prev').classList.add(productPrevSliderClass);
             $(this).slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             dots: true,
-            appendDots: '#' + carouselId + ' .product-prev__colors',
+            swipe: false,
+            infinite: false,
+            appendDots: '.' + productPrevSliderlId + ' .product-prev__colors',
             arrows: false,
             customPaging: function(slider,i){
                 let color = $(slider.$slides[i]).data('color');
@@ -83,43 +103,32 @@ $(document).ready(function () {
     };
 
     let productLineSlider = function () {
-        $('.js-products-line-slider').slick({
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            responsive: [
-              {
-                breakpoint: 1139,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 1,
-                  infinite: true,
-                  dots: true,
-                  appendDots: '.products-line-slider__dots', 
-                  prevArrow: '.products-line-slider__btn--prev',
-                  nextArrow: '.products-line-slider__btn--next',
-                  customPaging : function(slider, i) {
-                      return '<div class="products-line-slider__dot"></div>';
-                  },
-                }
-              },
-              {
-                breakpoint: 600,
-                settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 2
-                }
-              },
-              {
-                breakpoint: 480,
-                settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1
-                }
-              }
-            ]
-          
-        })
+        $('.js-products-line-slider').each(function (idx) {
+            let productsLineSliderID = "products-line-slider-" + idx;
+            this.closest('.products-line-slider').id = productsLineSliderID;
+                $(this).slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                infinite: false,
+                dots: true,
+                appendDots: '#' + productLineSliderID + '.products-line-slider__dots', 
+                prevArrow: '#' + productLineSliderID + '.products-line-slider__btn--prev',
+                nextArrow: '#' + productLineSliderID + '.products-line-slider__btn--next',
+                responsive: [
+                    {
+                        breakpoint: 1139,
+                        settings: {
+                            slidesToShow: 3,
+                            customPaging : function(slider, i) {
+                                return '<div class="products-line-slider__dot"></div>';
+                            },
+                        }
+                    }
+                ]
+            });
+        });
     };
+    
     mainSubnavHover();
     openSearchForm();
     clearSearchForm();
@@ -128,6 +137,13 @@ $(document).ready(function () {
     productPrevSlider();
     productLineSlider();
 });
+$(window).on('load', function () {
+    $(".sk-circle").fadeOut();
+    $(".preloader").delay(400).fadeOut("slow");
+    $("body").removeClass("fixed");
+});
+
+
 (function(){
     'use strict';
       $(window).on('load', function () {
@@ -137,24 +153,3 @@ $(document).ready(function () {
           }
       });
   })(jQuery)
-// // полифилы для IE11
-// (function () {
-//     if (!Element.prototype.closest) {
-//         Element.prototype.closest = function (css) {
-//             var node = this;
-//             while (node) {
-//                 if (node.matches(css)) return node;
-//                 else node = node.parentElement;
-//             }
-//             return null;
-//         };
-//     }
-// })();
-// (function () {
-//     if (!Element.prototype.matches) {
-//         Element.prototype.matches =  Element.prototype.matchesSelector ||
-//         Element.prototype.webkitMatchesSelector ||
-//         Element.prototype.mozMatchesSelector ||
-//         Element.prototype.msMatchesSelector;
-//     }
-// })();

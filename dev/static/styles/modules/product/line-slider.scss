@@ -1,8 +1,11 @@
 .products-line-slider{
     &__navigation {
         align-items: center;
-        display: flex;
+        display: none;
         justify-content: space-between;
+        @media screen and (max-width: $tablet-size) {
+            display: flex;
+        }
     }
     &__btn{
         @include size(40px);
