@@ -19,9 +19,10 @@
         }
     }
     &__link {
+        align-items: center;
         border-bottom: 2px solid transparent;
         color: $tundora;
-        display: block;
+        display: flex;
         font-size: 16px;
         font-weight: 600;
         line-height: 1.88;
@@ -31,63 +32,22 @@
         background-color: $white;
         padding-top: 10px;
         box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.05); 
-        display: flex;
-        position: absolute;
+        display: inline-flex;
         left: 0;
-        width: 720px;
+        padding-top: 10px;
         &-wrapper{
             display: none;
             position: absolute;
+            left: 0;
             top: 100%;
             width: 100%;
             z-index: 5;
         }
     }
-    &__col{
-        flex: 1;
+    &__icon{
+        @include size(12px);
+        fill: $tundora;
+        margin-left: 10px;
     }
 }
 
-.main-subnav{
-    width: 360px;
-    &__list{
-        position: relative;
-        width: 360px;
-        .main-subnav__list{
-            display: none;
-            left: 100%;
-            position: absolute;
-            top: 0;
-        }
-    }
-    &__item{
-        &:hover {
-            & > .main-subnav__link{
-                background-color: $athens-gray;
-                color: $blaze-orange;
-            }
-                
-            .main-subnav__icon {
-                stroke: $blaze-orange;
-            }
-            .main-subnav__list{
-                display: block;
-            }           
-        }
-    }
-    &__link{
-        align-items: center;
-        color: $mine-shaft;
-        display: flex;
-        line-height: 20px;
-        padding: 10px;
-        
-    }
-    &__icon{
-        margin-left: auto;
-        height: 12px;
-        stroke: $silver;
-        width: 8px;
-        // float: right;
-    }
-}
