@@ -40,7 +40,7 @@ $(document).ready(function () {
             nextArrow: '.banner__navigation--next',
             dots: true,
             customPaging : function(slider, i) {
-                return '<a class="banner__dot"></a>';
+                return '<div class="banner__dot"></div>';
             },
             appendDots: '.banner__dots'
         })
@@ -76,7 +76,7 @@ $(document).ready(function () {
             arrows: false,
             customPaging: function(slider,i){
                 let color = $(slider.$slides[i]).data('color');
-                return '<a class="product-prev__color" style="background-color:' + color + '"></a>'
+                return '<div class="product-prev__color" style="background-color:' + color + '"></div>'
             }
         });
         });
@@ -93,7 +93,13 @@ $(document).ready(function () {
                   slidesToShow: 3,
                   slidesToScroll: 1,
                   infinite: true,
-                  dots: true
+                  dots: true,
+                  appendDots: '.products-line-slider__dots', 
+                  prevArrow: '.products-line-slider__btn--prev',
+                  nextArrow: '.products-line-slider__btn--next',
+                  customPaging : function(slider, i) {
+                      return '<div class="products-line-slider__dot"></div>';
+                  },
                 }
               },
               {
