@@ -1,13 +1,17 @@
 .products-line-slider{
     &__navigation {
         align-items: center;
-        display: flex;
+        display: none;
         justify-content: space-between;
+        @media screen and (max-width: $tablet-size) {
+            display: flex;
+        }
     }
     &__btn{
         @include size(40px);
         align-items: center;
         display: flex;
+        border-radius: 2px;
         border: 1px solid $alto;
         justify-content: space-between;
     }
@@ -16,6 +20,30 @@
         fill: $blaze-orange;
         margin-left: auto;
         margin-right: auto
+    }
+    &__dot{
+        @include size(10px);
+        border-radius: 50%;
+        background-color: $alto;
+        cursor: pointer;
+        display: block;
+    }
+    &__dots{
+        .slick-dots{
+            align-items: center;
+            display: flex;
+            li{
+                margin-right: 10px;
+                &:last-child{
+                    margin-right: 0;
+                }
+                &.slick-active{
+                    .products-line-slider__dot{
+                        background-color: $blaze-orange;
+                    }
+                }
+            }
+        }
     }
     &__dot{
         @include size(10px);
