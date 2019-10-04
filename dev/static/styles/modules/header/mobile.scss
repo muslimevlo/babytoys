@@ -1,17 +1,58 @@
-.header {
-    &__mobile {
-        display: none;
-        position: relative;
-        @media screen and (max-width: $tablet-size) {
-            display: block;
+.header__mobile {
+    display: none;
+    position: relative;
+    @media screen and (max-width: $tablet-size) {
+        display: block;
+    }
+    .container{
+        display: flex;
+        justify-content: space-between;
+        @media screen and (max-width: $phone-size) {
+            align-items: center;
+            justify-content: flex-start;
         }
-        .container{
-            display: flex;
-            justify-content: space-between;
-            & > * {
-                flex: 0 0 48%;
-                width: 48%;
+        & > * {
+            flex: 0 0 48%;
+            width: 48%;
+            @media screen and (max-width: $phone-size) {
+                flex: 0 0 auto;
+                width: auto;
             }
+        }
+    }
+    .search{
+        @media screen and (max-width: $phone-size) {
+            display: none;
+        }
+    }
+    .mobile-menu{
+        &__toggle{
+            @media screen and (max-width: $phone-size) {
+                @include size(50px);
+                background-color: $white;
+                border-right: 1px solid rgba(75, 75, 75, 0.2); 
+                margin-right: 30px;
+                .sandwich{
+                    &__line{
+                        background-color: $tundora;
+                    }
+                } 
+                .mobile-menu{
+                    &__title{
+                        display: none;
+                    }
+                }
+            }
+        }   
+    }
+}
+
+
+.mobile{
+    &__logo{
+        display: none;
+        @media screen and (max-width: $phone-size) {
+            display: block;
         }
     }
 }

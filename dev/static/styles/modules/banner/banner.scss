@@ -1,6 +1,13 @@
 .s-banner{
     padding-bottom: 0;
+    @media screen and (max-width: $phone-size) {
+        padding-top: 0;
+    }
+    .container{
+        padding: 0;
+    }
 }
+
 .banner {
     background-image: linear-gradient(255deg, #ffb800, #ff6d00);
     height: 300px;
@@ -8,6 +15,9 @@
     position: relative;
     overflow: hidden;
     border-radius: 4px;
+    @media screen and (max-width: $phone-size) {
+        padding: 0 15px;
+    }
     &__item{
         outline: none;
     }
@@ -23,6 +33,9 @@
         top: 50%;
         margin-top: -25px;
         transition: all linear .3s;
+        @media screen and (max-width: $phone-size) {
+            display: none;
+        }
         &.banner__navigation{
             &--prev{
                 left: 30px;

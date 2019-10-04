@@ -6,7 +6,7 @@
             }
         }
     }
-    &__toogle{
+    &__toggle{
         align-items: center;
         background-color: $blaze-orange;
         color: $white;
@@ -30,6 +30,7 @@
         right: 15px;
         top: 0;
         z-index: 5;
+        display: none;
     }
     &__header{
         align-items: center;

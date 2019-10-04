@@ -42,7 +42,29 @@ $(document).ready(function () {
             customPaging : function(slider, i) {
                 return '<div class="banner__dot"></div>';
             },
-            appendDots: '.banner__dots'
+            appendDots: '.banner__dots',
+            responsive: [
+                {
+                  breakpoint: 768,
+                  settings: {
+                    arrows: false,
+                  }
+                },
+                {
+                  breakpoint: 600,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                  }
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                  }
+                }
+              ]
         })
     };
 
@@ -122,7 +144,7 @@ $(document).ready(function () {
     };
 
     let mobileMenu = function () {
-        $(document).on('click', '.mobile-menu__toogle',function (){
+        $(document).on('click', '.mobile-menu__toggle',function (){
             $(this).parent().addClass('mobile-menu--open')
         });
         $(document).on('click', '.mobile-menu__close',function (){
