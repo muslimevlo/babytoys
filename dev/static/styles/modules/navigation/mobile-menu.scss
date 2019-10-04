@@ -1,4 +1,11 @@
 .mobile-menu{
+    &.mobile-menu--open{
+        .mobile-menu{
+            &__content{
+                display: block;
+            }
+        }
+    }
     &__toogle{
         align-items: center;
         background-color: $blaze-orange;

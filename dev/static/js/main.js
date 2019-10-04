@@ -120,6 +120,17 @@ $(document).ready(function () {
           
         })
     };
+
+    let mobileMenu = function () {
+        $(document).on('click', '.mobile-menu__toogle',function (){
+            $(this).parent().addClass('mobile-menu--open')
+        });
+        $(document).on('click', '.mobile-menu__close',function (){
+            $(this).closest('.mobile-menu').removeClass('mobile-menu--open')
+        });
+    };
+
+
     catalogNavHover();
     openSearchForm();
     clearSearchForm();
@@ -127,6 +138,7 @@ $(document).ready(function () {
     tabs();
     productPrevSlider();
     productLineSlider();
+    mobileMenu();
 });
 (function(){
     'use strict';
