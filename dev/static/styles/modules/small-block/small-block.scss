@@ -3,6 +3,14 @@
         height: 22px;
     }
 }
+.mobile{
+    &__logo{
+        display: none;
+        @media screen and (max-width: $phone-size) {
+            display: block;
+        }
+    }
+}
 
 .advantages{
     display: flex;

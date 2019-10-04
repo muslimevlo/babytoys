@@ -25,34 +25,4 @@
             display: none;
         }
     }
-    .mobile-menu{
-        &__toggle{
-            @media screen and (max-width: $phone-size) {
-                @include size(50px);
-                background-color: $white;
-                border-right: 1px solid rgba(75, 75, 75, 0.2); 
-                margin-right: 30px;
-                .sandwich{
-                    &__line{
-                        background-color: $tundora;
-                    }
-                } 
-                .mobile-menu{
-                    &__title{
-                        display: none;
-                    }
-                }
-            }
-        }   
-    }
-}
-
-
-.mobile{
-    &__logo{
-        display: none;
-        @media screen and (max-width: $phone-size) {
-            display: block;
-        }
-    }
 }
