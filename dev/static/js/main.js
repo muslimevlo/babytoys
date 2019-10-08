@@ -152,10 +152,18 @@ $(document).ready(function () {
 
     let mobileMenu = function () {
         $(document).on('click', '.mobile-menu__toggle',function (){
-            $(this).parent().addClass('mobile-menu--open')
+            $(this).parent().addClass('mobile-menu--open');
+            if($(window).width() < 768) {
+                $('html').addClass('fixed');
+                $('.wrapper').addClass('mobile-menu-open');
+            }
         });
         $(document).on('click', '.mobile-menu__close',function (){
-            $(this).closest('.mobile-menu').removeClass('mobile-menu--open')
+            $(this).closest('.mobile-menu').removeClass('mobile-menu--open');
+            if($(window).width() < 768) {
+                $('html').removeClass('fixed');
+                $('.wrapper').removeClass('mobile-menu-open');
+            }
         });
     };
 
@@ -169,6 +177,11 @@ $(document).ready(function () {
     productLineSlider();
     mobileMenu();
 });
+// $(window).on('load', function () {
+//     $(".sk-circle").fadeOut();
+//     $(".preloader").delay(400).fadeOut("slow");
+//     $("html").removeClass("fixed");
+// });
 (function(){
     'use strict';
       $(window).on('load', function () {
@@ -178,6 +191,9 @@ $(document).ready(function () {
           }
       });
   })(jQuery)
+
+
+
 // // полифилы для IE11
 // (function () {
 //     if (!Element.prototype.closest) {

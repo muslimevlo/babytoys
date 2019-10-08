@@ -1,6 +1,9 @@
 .logo{
     &__img {
         height: 22px;
+        @media screen and (max-width: $phone-size) {
+            height: 0px;
+        }
     }
 }
 .mobile{
@@ -8,6 +11,7 @@
         display: none;
         @media screen and (max-width: $phone-size) {
             display: block;
+            max-width: 40px;
         }
     }
 }
@@ -23,6 +27,12 @@
         justify-content: space-between;
         padding: 20px 40px;
     }
+    @media screen and (max-width: $phone-size) {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: flex-start;
+    }
 }
 .advantage{
     display: flex;
@@ -32,6 +42,18 @@
         flex-direction: column;
         margin-right: 0;
         text-align: center;
+    }
+    @media screen and (max-width: $phone-size) {
+        text-align: left;
+        flex-direction: row;
+        padding-top: 15px;
+        margin-bottom: 10px;
+    }
+    &:last-child{
+        margin-right: 0;
+        @media screen and (max-width: $phone-size) {
+            margin-bottom: 0;
+        }
     }
     &__body{
         display: flex;
@@ -48,6 +70,10 @@
         @media screen and (max-width: $tablet-size) {
             margin-right: 0;
             margin-bottom: 10px;
+        }
+        @media screen and (max-width: $phone-size) {
+            margin-right: 20px;
+            margin-bottom: 0;
         }
     }
     &__descr{
@@ -95,6 +121,9 @@
             width: 100%;
             display: flex;
         }
+        @media screen and (max-width: $phone-size) {
+            overflow: auto;
+        }
         &__item{
             height: 50px;
             line-height: 48px;
@@ -140,4 +169,13 @@
         }
     }
 }
-  
+.mobile-scroll{
+    &-wrapper{
+        margin: 0 -15px!important;
+        overflow: auto;
+    }
+    &-inner{
+        display: inline-block;
+        padding: 0 15px;
+    }
+}

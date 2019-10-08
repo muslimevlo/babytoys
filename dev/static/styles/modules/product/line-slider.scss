@@ -19,7 +19,8 @@
         @include size(15px);
         fill: $blaze-orange;
         margin-left: auto;
-        margin-right: auto
+        margin-right: auto;
+        stroke: $blaze-orange;
     }
     &__dot{
         @include size(10px);

@@ -9,6 +9,11 @@
         }
     }
     &.brands__list--small{
+        @media screen and (max-width: $phone-size) {
+            flex-wrap: wrap;
+            overflow: auto;
+            margin-right: -15;
+        }
         & > * {
             &:nth-child(3n + 3) {
                 margin-right: 0;

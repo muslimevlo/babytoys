@@ -3,6 +3,9 @@
         .mobile-menu{
             &__content{
                 display: block;
+                @media screen and (max-width: $phone-size) {
+                    left: 0;
+                }
             }
         }
     }
@@ -16,6 +19,9 @@
         height: 50px;
         & > * {
             margin-right: 20px;
+            @media screen and (max-width: $phone-size) {
+                margin-right: 0;
+            }
             &:last-child { margin-right: 0; }
         }
         @media screen and (max-width: $phone-size) {
@@ -50,6 +56,17 @@
         top: 0;
         z-index: 5;
         display: none;
+        transition: all linear .5s;
+        @media screen and (max-width: $phone-size) {
+            bottom: 0;
+            box-shadow: none;
+            display: block;
+            left: -100%;
+            overflow: auto;
+            position: fixed;
+            right: auto;
+            width: 100%;
+        }
     }
     &__header{
         align-items: center;
