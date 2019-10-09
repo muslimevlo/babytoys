@@ -1,0 +1,13 @@
+extends template/main
+
+block variables
+	- var title = 'Бренды'
+	- var pageClass = 'brends-page'
+
+block content
+    .breadcrumbs
+        ul.breadcrumbs__list
+            li.breadcrumbs__item
+                a(href="index.html").breadcrumbs__link Главная
+            li.breadcrumbs__item
+                span.breadcrumbs__current Главная
