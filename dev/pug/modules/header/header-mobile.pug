@@ -43,9 +43,14 @@ mixin informNavLink(link,text)
                     .mobile-menu__phone
                         a(href="tel:88007077518").mobile-menu__phone-number 8(800) 707-75-18
                         span.mobile-menu__phone-text Звонок бесплатный
-        .mobile__logo.logo
-            img(src="static/images/general/logo.svg" alt="Logotip")
-            .logo__img
+        if(pageClass === "index-page")
+            .mobile__logo.logo
+                img(src="static/images/general/logo.svg" alt="Logotip")
+                .logo__img
+        else
+            a(href="index.html").mobile__logo.logo
+                img(src="static/images/general/logo.svg" alt="Logotip")
+                .logo__img
         .search
             form.search__form
                 .search__input-wrapper

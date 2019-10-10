@@ -1,13 +1,34 @@
 extends template/main
 
 block variables
-	- var title = 'Бренды'
-	- var pageClass = 'brends-page'
+    - var title = 'Бренды'
+    - var pageClass = 'brands-page' 
 
 block content
     .breadcrumbs
-        ul.breadcrumbs__list
-            li.breadcrumbs__item
-                a(href="index.html").breadcrumbs__link Главная
-            li.breadcrumbs__item
-                span.breadcrumbs__current Главная
+        .container
+            ul.breadcrumbs__list
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Главная
+                li.breadcrumbs__item
+                    span.breadcrumbs__current Бренды
+    section.s-brands
+        .container
+            .brands
+                h1.title-page Бренды
+                ul.brands__list
+                    each brand in [{img: 'puky',name: 'PUKY'},{img: 'globber',name: 'GLOBBER'},{img: 'hudora',name: 'Hudora'},{img: 'kokua',name: 'Kokua'},{img: 'merida',name: 'Merida'},{img: 'micro',name: 'MICRO'},{img: 'puky',name: 'PUKY'},{img: 'globber',name: 'GLOBBER'},{img: 'hudora',name: 'Hudora'},{img: 'kokua',name: 'Kokua'},{img: 'merida',name: 'Merida'},{img: 'micro',name: 'MICRO'},{img: 'puky',name: 'PUKY'},{img: 'globber',name: 'GLOBBER'},{img: 'hudora',name: 'Hudora'},{img: 'kokua',name: 'Kokua'},{img: 'merida',name: 'Merida'},{img: 'micro',name: 'MICRO'},{img: 'puky',name: 'PUKY'},{img: 'globber',name: 'GLOBBER'},{img: 'hudora',name: 'Hudora'},{img: 'kokua',name: 'Kokua'},{img: 'merida',name: 'Merida'},{img: 'micro',name: 'MICRO'}]
+                        li.brands__item
+                            a(href="").brand
+                                img(src=`static/images/content/brands/${brand.img}.jpg`).brand__img
+                                span.brand__name=brand.name
+                .content-block
+                    h3.title-block Сео текст по брендам
+                    p.text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus earum expedita fugit maiores optio, deserunt accusamus facere natus nostrum, quod non nobis cumque. Nisi deleniti, inventore veniam sunt fuga consequatur!
+                    p.text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus earum expedita fugit maiores optio, deserunt accusamus facere natus nostrum, quod non nobis cumque. Nisi deleniti, inventore veniam sunt fuga consequatur!
+//-     .breadcrumbs
+//-         ul.breadcrumbs__list
+//-             li.breadcrumbs__item
+//-                 a(href="index.html").breadcrumbs__link Главная
+//-             li.breadcrumbs__item
+//-                 span.breadcrumbs__current Главная
