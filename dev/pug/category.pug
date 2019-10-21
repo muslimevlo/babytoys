@@ -1,0 +1,49 @@
+extends template/main
+
+block variables
+    - var title = 'Беговелы'
+    - var pageClass = 'category-page'
+
+block content
+    .breadcrumbs
+        .container
+            ul.breadcrumbs__list
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Главная
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Каталог
+                li.breadcrumbs__item
+                    span.breadcrumbs__current Беговелы
+    include pages/category/slider
+    .category
+        .container
+            .category__header
+                h1.title-page Беговелы
+            .category__body
+                aside.category-filter
+                main.category-main
+                    section.s-category-main
+                        .products-prev__wrapper.products-prev__wrapper--small
+                            include modules/products/prev-1
+                            include modules/products/prev-2
+                            include modules/products/prev-1
+                            include modules/products/prev-2
+                            include modules/products/prev-1
+                            include modules/products/prev-2
+                            include modules/products/prev-1
+                            include modules/products/prev-2
+
+                        .pagination
+                            a(href="").pagination__btn
+                                +icon('arrow-left','pagination__icon')
+                            ul.pagination__list
+                                each i in [1,2,3,4,5]
+                                    if(i===1)
+                                        li.pagination__item--active
+                                            a(href="").pagination__link
+                                    else
+                                        li.pagination__item
+                                            a(href="").pagination__link
+                            a(href="").pagination__btn
+                                +icon('arrow-right','pagination__icon')
+                include pages/category/content

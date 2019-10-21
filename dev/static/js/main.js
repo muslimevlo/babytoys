@@ -150,6 +150,46 @@ $(document).ready(function () {
         })
     };
 
+    let productBorderLineSlider = function () {
+        $('.js-products-border-line-slider').slick({
+            slidesToShow: 4,
+            prevArrow: '.products-border-line-slider__btn--prev',
+            nextArrow: '.products-border-line-slider__btn--next',
+            slidesToScroll: 1,
+            responsive: [
+              {
+                breakpoint: 1139,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  infinite: true,
+                }
+              },
+              {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              },
+                {
+                breakpoint: 550,
+                settings: {
+                  slidesToShow: 1
+                }
+              }
+            ]
+          
+        })
+    };
+
     let mobileMenu = function () {
         $(document).on('click', '.mobile-menu__toggle',function (){
             $(this).parent().addClass('mobile-menu--open');
@@ -167,6 +207,40 @@ $(document).ready(function () {
         });
     };
 
+    let brandInfo = function () {
+        if($(window).innerWidth < 1140 && $(window).innerWidth > 767){
+            $('.brand__certificates').appendTo('.brand-info__tablet');
+        } else {
+            $('.brand__certificates').appendTo('.brand-info');
+        }
+    };
+
+    let categorySlider = function () {
+        $('.js-category-slider').slick({
+            slidesToShow: 6,
+            dots:true,
+            arrows: false,
+            infinite: false,
+            appendDots: '.category-slider__dots',
+            customPaging: function (slider, i) {
+                return '<div class="category-slider__dot"></div>';
+            },
+            responsive: [
+                {
+                    breakpoint: 1140,
+                    settings: {
+                        slidesToShow: 4,
+                    }
+                },{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                }
+            ]
+        })
+    };
+
 
     catalogNavHover();
     openSearchForm();
@@ -175,7 +249,10 @@ $(document).ready(function () {
     tabs();
     productPrevSlider();
     productLineSlider();
+    productBorderLineSlider();
     mobileMenu();
+    brandInfo();
+    categorySlider();
 });
 // $(window).on('load', function () {
 //     $(".sk-circle").fadeOut();
@@ -191,6 +268,17 @@ $(document).ready(function () {
           }
       });
   })(jQuery)
+
+  $(window).on('load', function (){
+    let brandInfo = function () {
+        if($(window).width() < 1139){
+            $('.brand__certificates').appendTo('.brand-info__tablet');
+        } else {
+            $('.brand__certificates').appendTo('.brand-info');
+        }
+    };
+      brandInfo();
+  });
 
 
 

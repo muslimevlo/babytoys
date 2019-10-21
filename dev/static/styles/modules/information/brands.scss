@@ -5,6 +5,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin-bottom: -45px;
         & > * {
             flex: 0 0 16%;
             margin-bottom: 45px;
@@ -52,5 +53,82 @@
         &:hover{
             box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.05);
         }
+    }
+    &-info{
+        align-items: flex-start;
+        display: flex;
+        @media screen and (max-width: $phone-size){
+            flex-direction: column;
+        }
+        & > * {
+            margin-right: 30px;
+            @media screen and (max-width: $phone-size){
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+            &:last-child{
+                margin-right: 0;
+                @media screen and (max-width: $phone-size){
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &__tablet{
+            flex: 0 0 255px;
+            width: 255px;
+            @media screen and (max-width: $phone-size){
+                flex: 1;
+                width: 100%;
+            }
+            & > * {
+                margin: 20px 0;
+                &:first-child{margin-top: 0;}
+                &:last-child{margin-bottom: 0;}
+            }
+        }
+
+    }
+    &__logo{
+        border: 1px solid $alto;
+        border-radius: 2px;
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .brand__img{
+            &:hover{
+                box-shadow: none;
+            }
+        }
+    }
+    &__description{
+        flex: 1;
+        & > * {
+            margin: 20px 0;
+            &:first-child{margin-top: 0;}
+            &:last-child{margin-bottom: 0;}
+        }
+    }
+    &__certificates{
+        flex: 0 0 255px;
+        width: 255px;
+        @media screen and (max-width: $phone-size){
+            flex: 1;
+            width: 100%;
+        }
+        &-label{
+            display: block;
+            font-weight: 700;
+            line-height: 1.79;
+            margin-bottom: 15px;
+        }
+    }
+    &__certificate{
+        border: 1px solid $alto;
+        border-radius: 2px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
